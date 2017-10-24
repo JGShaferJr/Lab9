@@ -14,28 +14,30 @@ public class DelimiterChecker {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		DelimiterChecker  delimiterChecker = new  DelimiterChecker();
+		
 		String test1 = "[5*{4/(2+3)}]";
 		String test2 = "abc{defg(ijk){l{mn}}op}q";
 		String test3 = "abc[def}}{ghij{kl}";
 
-		if (check(test1))
+		if (delimiterChecker.check(test1))
 			System.out.println("test1 has matching delimiters.");
 		else
 			System.out.println("test1 does not have matching delimiters.");
 
-		if (check(test2))
+		if (delimiterChecker.check(test2))
 			System.out.println("test2 has matching delimiters.");
 		else
 			System.out.println("test2 does not have matching delimiters.");
 
-		if (check(test3))
+		if (delimiterChecker.check(test3))
 			System.out.println("test3 has matching delimiters.");
 		else
 			System.out.println("test3 does not have matching delimiters.");
 
 	}
 
-	public static boolean check(String string) {
+	public boolean check(String string) {
 		Stack<String> stack = new Stack<String>();
 		String temp = "";
 
